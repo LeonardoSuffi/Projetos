@@ -1,0 +1,95 @@
+<form action="#" id="leo1">
+  <h3 id="leo2">
+    Conquiste até 3 anos de lucros e<br />
+    resultados em até 3 meses
+  </h3>
+  <p>Preencha o formulário abaixo para participar do programa Acelera 10X</p>
+
+  <label for="nome">Nome*</label>
+  <input type="text" size="40" class="nome" id="nome" aria-required="true" aria-invalid="false"
+    placeholder="Seu Nome" />
+
+  <label for="tel">Telefone*</label>
+  <input type="tel" size="20" class="tel" id="tel" aria-required="true" aria-invalid="false" placeholder="(00) 90000-0000" />
+
+  <label for="email">E-mail*</label>
+  <input type="email" size="40" class="email" id="email" aria-required="true" aria-invalid="false"
+    placeholder="exemple@email.com" />
+
+  <input type="submit" id="sub1" value="Receber Contato" />
+</form>
+
+<script>
+  function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    let regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+      results = regex.exec(location.search);
+    return results === null
+      ? ""
+      : decodeURIComponent(results[1].replace(/\+/g, " "));
+  }
+  document.querySelector("aqui o id do formulario").addEventListener("submit", function () {
+    event.preventDefault();
+    let endpointHash =
+      "https://app.pipe.run/webservice/integradorJson?hash=c5fcc77e-35da-42b7-aa99-9f247d5a1ba1";
+    let name = document.querySelector("#nome").value;
+    let email = document.querySelector("#email").value;
+    let phone = document.querySelector("#tel").value;
+    let utm_source = getParameterByName("utm_source");
+    let utm_campaign = getParameterByName("utm_campaign");
+
+    function configPost(method, body) {
+      return {
+        method: method,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      };
+    }
+
+    let rules = {
+      update: true,
+    };
+
+    let lead = [
+      {
+        id: email,
+        title: name,
+        mobile_phone: phone,
+        name: name,
+        email: email,
+        last_conversion: {
+          source: "Consultoria Site",
+        },
+        custom_fields: {
+          url_conversao: location.href,
+          utm_source: utm_source,
+          utm_campaign: utm_campaign,
+        },
+      },
+    ];
+
+    let dataToSend = {
+      rules: rules,
+      leads: lead,
+    };
+    if (name.trim() === "" || phone.trim() === "" || email.trim() === "") {
+      event.preventDefault();
+      alert("Existe campo sem informação");
+    } else {
+      fetch(endpointHash, configPost("POST", dataToSend)).then((data) => {
+        window.location.assign("https://consultoria.locar.com.br/obrigado");
+      });
+    }
+  });
+</script>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.js"></script>
+<script>
+  $(document).ready(function () {
+    $("#tel").mask("(00) 00000-0000");
+  });
+</script>

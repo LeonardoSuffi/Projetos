@@ -1,0 +1,105 @@
+<div id="cookie-notice" class="cookie-banner">
+    <p id="texto2">Usamos cookies para que sua experiência seja melhor e ao continuar navegando, você está ciente </p>
+    <br>
+    <button id="cn-accept-cookie" onclick="aceitarCookies()">Aceitar</button>
+    <button id="cn-decline-cookie" onclick="recusarCookies()">Recusar</button>
+    </div>
+    
+    <script>
+    function aceitarCookies() {
+        // Define um cookie com o nome 'cookie-aceito' e o valor 'true' por 30 dias
+        document.cookie = 'cookie-aceito=true;expires=' + new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toUTCString();
+        // Oculta o aviso de cookie
+        document.getElementById('cookie-notice').style.display = 'none';
+      }
+    
+      function recusarCookies() {
+        // Define um cookie com o nome 'cookie-recusado' e o valor 'true' por 30 dias
+        document.cookie = 'cookie-recusado=true;expires=' + new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toUTCString();
+        // Oculta o aviso de cookie
+        document.getElementById('cookie-notice').style.display = 'none';
+        // Você pode adicionar aqui código adicional para lidar com a recusa de cookies, se necessário
+      }
+    
+      // Verifica se o cookie 'cookie-aceito' existe quando a página é carregada
+      if (document.cookie.indexOf('cookie-aceito=true') > -1) {
+        // Oculta o aviso de cookie
+        document.getElementById('cookie-notice').style.display = 'none';
+      }
+    </script>
+    
+
+    <style>
+@media (max-width: 580px) {
+  #cookie-notice {
+    width: 100%; /* Utilize a largura total da tela */
+    padding: 10px 0; /* Reduza o preenchimento vertical */
+    height: auto; /* A altura se ajustará automaticamente ao conteúdo */
+    border-radius: 0; /* Remova o arredondamento das bordas */
+    box-shadow: none; /* Remova a sombra */
+    bottom: 0; /* Alinhe o banner na parte inferior da tela */
+    text-align: center;
+  }
+
+  #cookie-notice p {
+    font-size: 12px; /* Reduza o tamanho da fonte do texto */
+  }
+
+  #cookie-notice button {
+    font-size: 12px;
+  }
+  
+  #cn-decline-cookie {
+		margin-right:5px;
+  }
+}
+.cookie-banner {
+  position: fixed;
+  bottom: 10px;
+  width: 850px;
+  height: 50px;
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  z-index: 9999999999999;
+  
+  /* Centralizar conteúdo vertical e horizontalmente */
+  display: flex;
+  justify-content: center; /* Centralizar horizontalmente */
+  align-items: center; /* Centralizar verticalmente */
+}
+
+.cookie-banner p {
+  margin: 0;
+  padding: 5px;
+}
+
+#texto2 {
+  font-size: 15px;
+}
+
+.cookie-banner button {
+  background-color: #0c0c36;
+  color: #fff;
+  padding: 5px 12px;
+  font-weight: 400;
+  border: none;
+  border-radius: 3px;
+  font-size: 14px;
+  cursor: pointer;
+}
+#cn-decline-cookie {
+  background-color: #000;
+  color: #fff;
+	margin-left:10px;
+  padding: 5px 12px;
+  font-weight: 400;
+  border: none;
+  border-radius: 3px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+    </style>

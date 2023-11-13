@@ -1,0 +1,568 @@
+<form action="leo" method="post" id="leo">
+  <div id="etapas" style="display: flex;">
+<div id="e1" style="background-color: #091747;"><p id="a1" style="color: #fff;">1° Detalhes da marca</p></div><div id="e2"><p id="a2">2° Cadastro</p></div><div id="e3"><p id="a3">3° Titular</p></div><div id="e4"><p id="a4">4° Detalhes</p></div>
+</div><br>
+    <div id="etapa1">
+        <label for="marca">Qual nome da sua marca?</label>
+        <input type="text" name="marca" id="marca" placeholder="Nome da sua marca" required>
+        <label for="segmento">Qual ramo de atuação da sua marca?</label>
+        <input type="text" name="segmento" id="segmento" placeholder="Ex: Vestuário / Clínica / Retaurante" required>
+        <label for="atividade">Descreva quais são suas atividades:</label>
+        <textarea id="atividade" name="atividade" rows="5" cols="55" placeholder="Exemplo:
+Ofereço serviços de consultoria financeira, revendo roupas e sapatos através de minha loja física e virtual." required></textarea>        
+        <label for="logo">Você possui logomarca?</label>
+        <select name="logo" id="logo" required>
+            <option value="">Selecione</option>
+            <option value="SIM">SIM</option>
+            <option value="NÃO">NÃO</option>
+        </select>
+        <br>
+        <p>EXEMPLO: <img src="http://sitexis.com.br/agorablack/wp-content/uploads/2023/11/Nike-Logo-Svg.svg" alt="logo de exemplo"> <img src="http://sitexis.com.br/agorablack/wp-content/uploads/2023/11/Nike-logo-e-texto-svg.svg" alt="logo de exemplo 2"></p>
+        <hr>
+        <button type="button" id="proximo1">Continuar <i aria-hidden="true" class="far fa-arrow-alt-circle-right"></i></button>
+    </div>
+
+    <div id="etapa2" style="display: none;">
+        <label for="nome">Qual o seu nome?</label>
+        <input type="text" name="nome" id="nome" placeholder="Digite o seu nome" required>
+        <label for="email">Qual o seu E-mail?</label>
+        <input type="email" name="email" id="email" placeholder="Digite o seu E-mail" required>
+        <label for="tel">Digite o seu WhatsApp</label>
+        <input type="text" name="tel" id="tel" placeholder="(00) 90000-0000" required>
+        <hr>
+        <button type="button" id="proximo2">Continuar <i aria-hidden="true" class="far fa-arrow-alt-circle-right"></i></button>
+        <button type="button" id="voltar2" style="background-color: rgb(184, 184, 184);"><i aria-hidden="true" class="far fa-arrow-alt-circle-left"></i> Voltar</button>
+    </div>
+
+    <div id="etapa3" style="display: none;">
+        <label for="titular">Em nome de quem você quer registrar a marca?</label>
+        <select name="titular" id="titular" required>
+            <option value="">Selecione o titular</option>
+            <option value="CPF">Pessoa Física (CPF)</option>
+            <option value="CNPJ">Pessoa Jurídica (CNPJ)</option>
+        </select><br>
+        <hr>
+        <button type="submit" id="proximo3">Continuar <i aria-hidden="true" class="far fa-arrow-alt-circle-right"></i></button>
+        <button type="button" id="voltar3" style="background-color: rgb(184, 184, 184);"><i aria-hidden="true" class="far fa-arrow-alt-circle-left"></i> Voltar</button>
+    </div>
+    <div id="etapa4" style="display:none;">
+      <div id="plano">
+      <div id="plano1">
+      <p style="margin-bottom: -15px;">Detalhes sobre o seu registro.</p>
+      <p>R$<span>1697</span>,40</p>
+      <p>em até 12x</p>
+      <p style="font-size: 12px; font-weight: 100;">*com todas as taxas federais inclusas</p>
+    </div><br>
+      <div id="plano2">
+      <i aria-hidden="true" class="fas fa-check-circle" style="color: #CB83FC; margin-right: 5px;"></i><p style="text-align: start; margin-top:-5px;">Registro de marca.</p>
+      </div>
+      <div id="plano2">
+      <i aria-hidden="true" class="fas fa-check-circle" style="color: #CB83FC; margin-right: 5px;"></i><p  style="text-align: start; margin-top:-5px;">Garantia melhor preço Brasil.</p>
+    </div>
+    <div id="plano2">
+      <i aria-hidden="true" class="fas fa-check-circle" style="color: #CB83FC; margin-right: 5px;"></i><p style="text-align: start; margin-top:-5px;">Garantia marca não disponível</p>
+    </div>
+    <div id="plano2">
+      <i aria-hidden="true" class="fas fa-check-circle" style="color: #CB83FC; margin-right: 5px;"></i><p style="text-align: start; margin-top:-5px;">Pesquisa de Marca Completa.</p>
+    </div>
+    <div id="plano2">
+      <i aria-hidden="true" class="fas fa-check-circle" style="color: #CB83FC; margin-right: 5px;"></i><p style="text-align: start; margin-top:-5px;">Assessoria Jurídica Especializada.</p>
+    </div>
+    <div id="plano2">
+      <i aria-hidden="true" class="fas fa-check-circle" style="color: #CB83FC; margin-right: 5px;"></i><p style="text-align: start; margin-top:-5px;">Taxas federais inclusas.</p>
+    </div>
+    <div id="plano2">
+      <i aria-hidden="true" class="fas fa-check-circle" style="color: #CB83FC; margin-right: 5px;"></i><p style="text-align: start; margin-top:-5px;">Processo de Registro acompanhado até o Deferimento da Marca.</p>
+    </div>
+    <div id="plano2">
+      <i aria-hidden="true" class="fas fa-check-circle" style="color: #CB83FC; margin-right: 5px;"></i><p style="text-align: start; margin-top:-5px;">Cumprimento de eventuais exigências jurídicas.</p>
+    </div>
+    <div id="plano2">
+      <i aria-hidden="true" class="fas fa-check-circle" style="color: #CB83FC; margin-right: 5px;"></i><p style="text-align: start; margin-top:-5px;">Seguro em caso de indeferimento.</p>
+    </div>
+    <div id="plano2">
+      <i aria-hidden="true" class="fas fa-check-circle" style="color: #CB83FC; margin-right: 5px;"></i><p style="text-align: start; margin-top:-5px;">Entrega de Protocolo de início de Registro em 24h.</p>
+    </div>
+    <div id="plano2">
+      <i aria-hidden="true" class="fas fa-check-circle" style="color: #CB83FC; margin-right: 5px;"></i><p style="text-align: start; margin-top:-5px;">Consulta ilimitada com um advogado especializado sobre a marca.</p>
+    </div>
+      </div>
+      <hr>
+      <a href="https://sitexis.com.br/agorablack/carrinho/?add-to-cart=1756">Comprar Agora <i aria-hidden="true" class="fas fa-shopping-cart"></i></a>
+      <button type="button" id="voltar4" style="background-color: rgb(184, 184, 184);"><i aria-hidden="true" class="far fa-arrow-alt-circle-left"></i> Voltar</button>
+    </div>
+</form>
+
+
+<script>
+  // Etapa 1
+  const etapa1 = document.getElementById('etapa1');
+  const proximo1 = document.getElementById('proximo1');
+  const divE1 = document.getElementById('e1');
+  const divE2 = document.getElementById('e2');
+  const divE3 = document.getElementById('e3');
+  const divE4 = document.getElementById('e4');
+  var a1 = document.getElementById('a1');
+  var a2 = document.getElementById('a2');
+  var a3 = document.getElementById('a3');
+  var a4 = document.getElementById('a4');
+  
+  proximo1.addEventListener('click', function() {
+      if (validarCamposEtapa1()) {
+          etapa1.style.display = 'none';
+          document.getElementById('etapa2').style.display = 'block';
+          divE1.style.backgroundColor = '#091747';
+          a1.style.color = '#ffffff';
+          divE2.style.backgroundColor = '#091747';
+          a2.style.color = '#ffffff';
+          divE3.style.backgroundColor = '';
+          divE4.style.backgroundColor = '';
+      } else {
+          alert('Por favor, preencha todos os campos');
+      }
+  });
+  
+  function validarCamposEtapa1() {
+      const marca = document.getElementById('marca').value;
+      const segmento = document.getElementById('segmento').value;
+      const atividade = document.getElementById('atividade').value;
+      const logo = document.getElementById('logo').value;
+  
+      if (marca === '' || segmento === '' || atividade === '' || logo === '') {
+          return false;
+      }
+  
+      return true;
+  }
+  
+  // Etapa 2
+  const etapa2 = document.getElementById('etapa2');
+  const voltar2 = document.getElementById('voltar2');
+  const proximo2 = document.getElementById('proximo2');
+  
+  voltar2.addEventListener('click', function() {
+      etapa2.style.display = 'none';
+      document.getElementById('etapa1').style.display = 'block';
+      divE1.style.backgroundColor = '#091747';
+      a1.style.color = '#ffffff';
+      divE2.style.backgroundColor = '';
+      divE3.style.backgroundColor = '';
+      divE4.style.backgroundColor = '';
+  });
+  
+  proximo2.addEventListener('click', function() {
+      if (validarCamposEtapa2()) {
+          etapa2.style.display = 'none';
+          document.getElementById('etapa3').style.display = 'block';
+          divE2.style.backgroundColor = '#091747';
+          a2.style.color = '#ffffff';
+          divE3.style.backgroundColor = '#091747';
+          a3.style.color = '#ffffff';
+          divE4.style.backgroundColor = '';
+      } else {
+          alert('Por favor, preencha todos os campos');
+      }
+  });
+  
+  function validarCamposEtapa2() {
+      const nome = document.getElementById('nome').value;
+      const email = document.getElementById('email').value;
+      const tel = document.getElementById('tel').value;
+  
+      if (nome === '' || email === '' || tel === '') {
+          return false;
+      }
+  
+      return true;
+  }
+  
+  // Etapa 3
+  const etapa3 = document.getElementById('etapa3');
+  const voltar3 = document.getElementById('voltar3');
+  const proximo3 = document.getElementById('proximo3');
+  
+  voltar3.addEventListener('click', function() {
+      etapa3.style.display = 'none';
+      document.getElementById('etapa2').style.display = 'block';
+      divE2.style.backgroundColor = '#091747';
+      a2.style.color = '#ffffff';
+      divE3.style.backgroundColor = '';
+      divE4.style.backgroundColor = '';
+  });
+  
+  proximo3.addEventListener('click', function() {
+      if (validarCamposEtapa3()) {
+          etapa3.style.display = 'none';
+          document.getElementById('etapa4').style.display = 'block';
+          divE3.style.backgroundColor = '#091747';
+          a3.style.color = '#ffffff';
+          divE4.style.backgroundColor = '#091747';
+          a4.style.color = '#ffffff';
+      } else {
+          alert('Por favor, preencha todos os campos');
+      }
+  });
+  
+  function validarCamposEtapa3() {
+      const titular = document.getElementById('titular').value;
+  
+      if (titular === '') {
+          return false;
+      }
+  
+      return true;
+  }
+  
+  // Etapa 4
+  const etapa4 = document.getElementById('etapa4');
+  const voltar4 = document.getElementById('voltar4');
+  
+  voltar4.addEventListener('click', function() {
+      etapa4.style.display = 'none';
+      document.getElementById('etapa3').style.display = 'block';
+      divE3.style.backgroundColor = '#091747';
+      a3.style.color = '#ffffff';
+      divE4.style.backgroundColor = '';
+  });
+  
+  document.getElementById('leo').addEventListener('submit', function(event) {
+      if (!validarCamposEtapa4()) {
+          event.preventDefault();
+          alert('Por favor, preencha todos os campos');
+      }
+  });
+  
+  function validarCamposEtapa4() {
+      // validar campos da etapa 4
+      return true;
+  }
+  </script>
+
+
+
+<script>
+    function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    let regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+      results = regex.exec(location.search);
+    return results === null
+      ? ""
+      : decodeURIComponent(results[1].replace(/\+/g, " "));
+  }
+  
+    document.querySelector('#proximo1').addEventListener('click', function() {
+      event.preventDefault();
+    let endpointHash =
+      "https://app.pipe.run/webservice/integradorJson?hash=92f28914-58c6-4ae3-b2e2-b777abb429ee";
+    let marca = document.querySelector("#marca").value;
+    let segmento = document.querySelector("#segmento").value;
+    let atividade = document.querySelector("#atividade").value;
+    let logo = document.querySelector("#logo").value;
+    let utm_source = getParameterByName("utm_source");
+  
+    function configPost(method, body) {
+      return {
+        method: method,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      };
+    }
+  
+    let rules = {
+      update: true,
+      filter_status_update: "open",
+      status: "open",
+    };
+  
+    let lead = [
+      {
+        id: marca,
+        title: marca.toUpperCase(),
+        mobile_phone: "",
+        name: "",
+        email: "",
+        company: marca,
+        last_conversion: {
+          source: "Compra Direta Passo 01",
+        },
+        custom_fields: {
+            Segmento: segmento,
+            Atividade: atividade,
+            Logo: logo,
+            Titular: "",
+          url_conversao: location.href,
+          utm_source: utm_source,
+        },
+      },
+    ];
+  
+      let dataToSend = {
+        rules: rules,
+        leads: lead,
+      };
+
+      if (marca.trim() === "" || segmento.trim() === "" || logo.trim() === "" || atividade.trim() === "") {
+      event.preventDefault();
+    }
+      else{
+
+        fetch(endpointHash, configPost("POST", dataToSend)).then((data) => {
+        });
+      }
+
+    });
+    </script>
+
+
+<script>
+    function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    let regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+      results = regex.exec(location.search);
+    return results === null
+      ? ""
+      : decodeURIComponent(results[1].replace(/\+/g, " "));
+  }
+  
+    document.querySelector('#proximo2').addEventListener('click', function() {
+      event.preventDefault();
+    let endpointHash =
+      "https://app.pipe.run/webservice/integradorJson?hash=92f28914-58c6-4ae3-b2e2-b777abb429ee";
+    let marca = document.querySelector("#marca").value;
+    let nome = document.querySelector("#nome").value;
+    let email = document.querySelector("#email").value;
+    let tel = document.querySelector("#tel").value;
+    let segmento = document.querySelector("#segmento").value;
+    let atividade = document.querySelector("#atividade").value;
+    let logo = document.querySelector("#logo").value;
+    let utm_source = getParameterByName("utm_source");
+  
+    function configPost(method, body) {
+      return {
+        method: method,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      };
+    }
+  
+    let rules = {
+      update: true,
+      filter_status_update: "open",
+      status: "open",
+    };
+  
+    let lead = [
+      {
+        id: marca,
+        title:  nome.toUpperCase() + " - " + marca.toUpperCase(),
+        mobile_phone: tel,
+        name: nome,
+        email: email,
+        last_conversion: {
+          source: "Compra Direta Passo 02",
+        },
+        custom_fields: {
+            Segmento: segmento,
+            Atividade: atividade,
+            Logo: logo,
+            Titular: "",
+          url_conversao: location.href,
+          utm_source: utm_source,
+        },
+      },
+    ];
+  
+      let dataToSend = {
+        rules: rules,
+        leads: lead,
+      };
+
+      if (nome.trim() === "" || email.trim() === "" || tel.trim() === "") {
+      event.preventDefault();
+    }
+      else {
+        fetch(endpointHash, configPost("POST", dataToSend)).then((data) => {
+        });
+      }
+    });
+    </script>
+
+<script>
+  function getParameterByName(name) {
+  name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+  let regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+    results = regex.exec(location.search);
+  return results === null
+    ? ""
+    : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+  document.querySelector('#leo').addEventListener('submit', function() {
+    event.preventDefault();
+  let endpointHash =
+    "https://app.pipe.run/webservice/integradorJson?hash=92f28914-58c6-4ae3-b2e2-b777abb429ee";
+  let marca = document.querySelector("#marca").value;
+  let nome = document.querySelector("#nome").value;
+  let email = document.querySelector("#email").value;
+  let tel = document.querySelector("#tel").value;
+  let segmento = document.querySelector("#segmento").value;
+  let atividade = document.querySelector("#atividade").value;
+  let titular = document.querySelector("#titular").value;
+  let logo = document.querySelector("#logo").value;
+  let utm_source = getParameterByName("utm_source");
+
+  function configPost(method, body) {
+    return {
+      method: method,
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    };
+  }
+
+  let rules = {
+    update: true,
+    filter_status_update: "open",
+    status: "open",
+  };
+
+  let lead = [
+    {
+      id: marca,
+      title:  nome.toUpperCase() + " - " + marca.toUpperCase(),
+      mobile_phone: tel,
+      name: nome,
+      email: email,
+      last_conversion: {
+        source: "Compra Direta Passo 03",
+      },
+      custom_fields: {
+          Segmento: segmento,
+          Atividade: atividade,
+          Logo: logo,
+          Titular: titular,
+        url_conversao: location.href,
+        utm_source: utm_source,
+      },
+    },
+  ];
+
+    let dataToSend = {
+      rules: rules,
+      leads: lead,
+    };
+
+    if (titular.trim() === "") {
+    event.preventDefault();
+  }
+    else {
+      fetch(endpointHash, configPost("POST", dataToSend)).then((data) => {
+
+      });
+    }
+  });
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#tel").mask("(00) 00000-0000");
+    });
+  </script>
+
+
+<style>
+  #leo input{
+    border: 1px solid #00000030;
+    outline: none;
+    margin-bottom: 10px;
+  }
+  #leo a:hover{
+      background-color: #BA55FF;
+  }
+  
+  #leo a{
+    float: right;
+    outline: none;
+    text-decoration: none;
+    margin-left: 15px;
+    color: #091747;
+    padding: 15px;
+    font-weight: 640;
+    border: none;
+    border-radius: 5px;
+    background-color: #CB83FC;
+  }
+  #leo button{
+    float: right;
+    margin-left: 15px;
+    color: #091747;
+    font-weight: 640;
+    border: none;
+    border-radius: 5px;
+    background-color: #CB83FC;
+  }
+  #leo button:hover{
+      background-color: #BA55FF;
+  }
+  
+  #leo textarea{
+    border: 1px solid #00000030;
+    outline: none;
+    height: 105px;
+  }
+  #leo label{
+    font-family: 'Open Sans', sans-serif; 
+    color: #091747;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+  #etapas div{
+    margin-right: 25px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  #etapas div p{
+    color: #000000;
+    font-weight: 700;
+    font-size: 18px;
+  }
+  #plano{
+   text-align: center; 
+  }
+  #plano1 p{
+    color: #091747;
+    font-weight: 700;
+    font-size: 25px;
+  }
+  #plano2{
+   display: flex;
+   margin-top: 5px;
+  }
+  #leo span{
+    color: #CB83FC;
+    font-size: 60px;
+  }
+  #leo hr{
+      border: 1px solid #091747;
+      margin-top: 10px;
+      margin-bottom: 10px;
+  }
+  @media (max-width: 480px) {
+      #leo label{
+          font-size: 14px;
+      }
+      #leo input{
+          font-size: 14px;
+      }
+      #leo textarea{
+          font-size: 14px;
+      }
+      #leo select{
+          font-size: 14px;
+      }
+      #etapas div p{
+          font-size: 12px;
+      }
+  }
+</style>

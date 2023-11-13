@@ -1,0 +1,145 @@
+<form id="leo1" method="POST">
+  <label for="nome">Nome Completo</label>
+  <input type="text" id="name" placeholder="Seu Nome" name="name" required>
+
+  <label for="telefone">Telefone</label>
+  <input type="tel" id="telefone" placeholder="(00) 90000-0000" name="telefone" required>
+
+  <label for="email">E-mail</label>
+  <input type="email" id="email" placeholder="exemplo@gmail.com" name "email" required>
+
+  <label for="cidade">Cidade</label>
+  <input type="text" id="cidade" placeholder="Cidade De Interesse" name="cidade" required>
+
+  <label for="valorInvestimento">Valor De Investimento</label>
+  <select name="ValorInvestimento" id="ValorInvestimento" required>
+      <option value="">Qual Valor Do Seu Investimento?</option>
+      <option value="R$0 à R$199.000,00">R$0 à R$199.000,00</option>
+      <option value="R$200.000,00 à R$299.000,00">R$200.000,00 à R$299.000,00</option>
+      <option value="R$300.000,00+">R$300.000,00+</option>
+  </select>
+
+  <button type="submit" id="sub1">Receber Proposta</button>
+</form>
+
+<script>
+function getParameterByName(name) {
+  name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+  let regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
+  let results = regex.exec(location.search);
+  return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+document.querySelector("#leo1").addEventListener("submit", function (event) {
+    event.preventDefault(); // Impede o envio padrão do formulário
+
+    // Obtém referências para os campos do formulário
+    const nome = document.getElementById('name').value;
+    const telefone = document.getElementById('telefone').value;
+    const email = document.getElementById('email').value;
+    const cidade = document.getElementById('cidade').value;
+    const ValorInvestimento = document.getElementById('ValorInvestimento').value;
+    const utm_source = getParameterByName("utm_source");
+    const utm_campaign = getParameterByName("utm_campaign");
+
+    // Cria um objeto com os dados do formulário
+    const formData = {
+      event_type: 'CONVERSION',
+      event_family: 'CDP',
+      payload: {
+        conversion_identifier: 'utm_campaign Site',
+        name: nome,
+        email: email,
+        job_title: '',
+        state: '',
+        city: cidade,
+        country: '',
+        personal_phone: telefone,
+        mobile_phone: telefone,
+        twitter: '',
+        facebook: '',
+        linkedin: '',
+        website: '',
+        cf_custom_field_name: '',
+        company_name: '',
+        company_site: '',
+        company_address: '',
+        client_tracking_id: '',
+        traffic_source: utm_source,
+        traffic_medium: '',
+        traffic_campaign: utm_campaign,
+        traffic_value: '',
+        tags: [ValorInvestimento],
+        available_for_mailing: true,
+        legal_bases: [{ category: 'communications', type: 'consent', status: 'granted' }],
+      },
+    };
+
+    // Configuração da solicitação
+    const options = {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    };
+
+    // Envia a solicitação para a API da RD Station
+    fetch('https://api.rd.services/platform/conversions?api_key=37621c7bcb434c68da9271f64c2bbe82', options)
+      .then(response => response.json())
+      .then(response => {
+        console.log(response);
+        window.location.href = 'https://franquiafichips.com.br/obrigado/';
+      })
+      .catch(err => console.error(err));
+});
+</script>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.js"></script>
+<script>
+$(document).ready(function () {
+  $("#telefone").mask("(00) 00000-0000");
+});
+</script>
+
+
+    <style>
+        form #name, #telefone, #email, #cidade, #ValorInvestimento{
+            width: 100%;
+            height: 45px;
+            font-size: 15px;
+            padding-left: 10px;
+            border-radius: 5px;
+            border: 1px solid #000;
+        }
+       #form1 label{
+            font-size:17px;
+            margin-top:-10px;
+        }
+        #sub1{
+       width: 100%;
+      border: 0px;
+      text-align: center;
+      height: 50px;
+      background: #ebebb6;
+      color: black;
+      font-size: 15px;
+      cursor: pointer;
+      transition: .5s;
+      border-radius: 15px;
+      text-transform: uppercase;
+      font-weight: bold;
+        }
+        #sub1:hover{
+                  background: #cece94;;
+      box-shadow: inset 0px 8px 8px 3px #ebebb6;
+      font-weight: bold;
+			color: #990000;
+        }
+    </style>
+ 
